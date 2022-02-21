@@ -1,8 +1,5 @@
 const fs=require("fs")
 const chalk=require("chalk")
-const getNotes=function(){
-    console.log("Notes.js is running");
-}
 
 const addNote=(title,body)=>{     
      const notes=loadNotes();
