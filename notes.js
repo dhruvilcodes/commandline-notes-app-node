@@ -40,10 +40,10 @@ const saveNotes=(notes)=>{
 
 const removeNote=(title)=>{
     const notes=loadNotes();
-    const updatedNotes=notes.filter((note)=>(note.title!==title));
-   if(notes.length!=updatedNotes.length)
+    const duplicateNote=notes.find((note)=>(note.title!==title));
+   if(!duplicateNote)
    {
-    saveNotes(updatedNotes);
+    saveNotes(notes);
     console.log(chalk.green.inverse("Note Removed!"));
    }
    else  
