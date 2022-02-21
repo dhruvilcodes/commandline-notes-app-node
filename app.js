@@ -37,7 +37,7 @@ yargs.command({
     describe:'Listing the notes',
     handler(argv)
     {
-        console.log(`Listing a new note!!`);
+       notes.listNotes();
     }
 })
 

@@ -50,12 +50,22 @@ const removeNote=(title)=>{
    {
     console.log(chalk.red.inverse("No Note found!"));
    }
-
-
-
 }
+
+
+const listNotes=()=>{
+     const nodes=loadNotes();
+     console.log(chalk.green.inverse("Your Notes!"));
+     nodes.forEach(note => {
+        console.log(note.title);  
+     });
+}
+
+
+
 module.exports={
     getNotes: getNotes,
     addNote : addNote,
-    removeNote : removeNote
+    removeNote : removeNote,
+    listNotes : listNotes
 };
