@@ -1,5 +1,5 @@
 const fs=require("fs")
-
+const chalk=require("chalk")
 const getNotes=function(){
     console.log("Notes.js is running");
 }
@@ -43,9 +43,18 @@ const saveNotes=function(notes){
 const removeNote=function(title){
     const notes=loadNotes();
     const updatedNotes=notes.filter(function(note){
-        return note.title!=title;
+        return note.title!==title;
    })
-   saveNotes(updatedNotes);
+   if(notes.length!=updatedNotes.length)
+   {
+    saveNotes(updatedNotes);
+    console.log(chalk.green("Note Removed!"));
+   }
+   else  
+   {
+    console.log(chalk.red("No Note found!"));
+   }
+
 
 
 }
