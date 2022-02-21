@@ -2,7 +2,8 @@ const chalk=require('chalk');
 const notes=require('./notes.js');
 const yargs= require('yargs');
 const fs =  require('fs');
-
+const { describe } = require('yargs');
+const { argv } = require('process');
 
 // add,remove,read,list
 
@@ -53,9 +54,10 @@ yargs.command({
     command: 'remove',
     describe:'Remove a new note',
     
-    handler : function()
+    handler : function(argv)
     {
-        console.log(`Removing the note!!`);
+        notes.removeNote(argv.title);
+        console.log(`The note "${argv.title}" is removed`);
     }
 })
 yargs.parse();
