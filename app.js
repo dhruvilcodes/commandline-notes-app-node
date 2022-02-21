@@ -1,8 +1,6 @@
 const chalk=require('chalk');
 const notes=require('./notes.js');
 const yargs= require('yargs');
-const { describe } = require('yargs');
-const { argv } = require('process');
 const fs =  require('fs');
 
 
